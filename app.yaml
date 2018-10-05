@@ -1,0 +1,18 @@
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /
+  script: main.app
+
+env_variables:
+    CLOUDSQL_CONNECTION_NAME: pitch-music-dev:us-west1:pitch-music-dev-cs-01
+    CLOUDSQL_USER: yanay
+    CLOUDSQL_PASSWORD: pitch2017
+    
+service: yl-csql-1
+
+libraries:
+- name: MySQLdb
+  version: "latest"
